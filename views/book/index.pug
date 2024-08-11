@@ -1,0 +1,37 @@
+include ./../layouts/start.pug
+    include ./../layouts/header.pug
+        include ./../layouts/menu.pug
+
+    main 
+        .container 
+            a.link-create(href="/books/create") Создать
+            if books.length > 0
+                table.books-table 
+                    thead.books-table_thead 
+                        tr 
+                            th
+                            th Название
+                            th Автор
+                            th Избранное
+                            th 
+                    tbody 
+                        each val, idx in books 
+                            tr 
+                                td.books-table_img-td 
+                                    div.books-table_img-wrapper
+                                        img.books-table_img(src=`/imgs/${val.fileCover}`, alt=`${val.title}`)
+                                td #{val.title}
+                                td #{val.authors}
+                                td 
+                                    if val.favorite == true 
+                                        p Да
+                                    else 
+                                        p Нет
+                                td 
+                                    .books-table_actions_wrapper 
+                                        a.books-table_link_on(href=`/books/${val.id}`) Посмотреть
+                                        a.books-table_link_on(href=`/books/update/${val.id}`) Изменить
+                                        form.books-table_form-delete(action=`/books/delete/${val.id}`, method="post")
+                                            button.books-table_link_on(type="submit") Удалить 
+            else
+                h1.empty-list Записей не найдено

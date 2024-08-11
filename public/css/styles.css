@@ -1,0 +1,256 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Roboto", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	background-color: #292929;
+	color: #fff;
+}
+
+button {
+	font-family: "Roboto", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 14px;
+	background: none;
+	border: none;
+	outline: none;
+	color: #fff;
+	cursor: pointer;
+}
+
+a {
+	text-decoration: none;
+	color: #fff;
+}
+
+li {
+	list-style-type: none;
+}
+
+.container {
+	width: 1200px;
+	margin: 0 auto;
+}
+
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	background-color: #1f1f1f;
+	height: 100px;
+}
+
+.navbar {
+	display: flex;
+	align-items: center;
+	column-gap: 50px;
+}
+
+.logo {
+	display: block;
+	position: relative;
+	font-size: 1.5rem;
+}
+
+.logo:before,
+.navbar-list_link:before {
+	content: "";
+	position: absolute;
+	height: 2px;
+	width: 0%;
+	bottom: 0;
+	left: 0;
+	background-color: #fff;
+
+	transition: width 0.2s ease-in-out;
+}
+
+.logo:hover:before,
+.navbar-list_link:hover:before {
+	width: 100%;
+}
+
+.navbar-list {
+	display: flex;
+	column-gap: 20px;
+}
+
+.navbar-list_link {
+	position: relative;
+	padding-block: 5px;
+	text-transform: uppercase;
+}
+
+.navbar-list_link-active {
+	color: #b8b8b8;
+}
+
+.navbar-list_link-active:before {
+	background-color: #b8b8b8;
+}
+
+.books-table {
+	margin-top: 50px;
+	width: 100%;
+	border: none;
+}
+
+.books-table thead th {
+	font-weight: bold;
+	text-align: left;
+	border: none;
+	padding: 10px 15px;
+	background: #3d3d3d;
+	font-size: 14px;
+}
+.books-table thead tr th:first-child {
+	border-radius: 8px 0 0 8px;
+}
+.books-table thead tr th:last-child {
+	border-radius: 0 8px 8px 0;
+}
+.books-table tbody td {
+	text-align: left;
+	border: none;
+	padding: 10px 15px;
+	font-size: 14px;
+}
+.books-table tbody tr:nth-child(even) {
+	background: #3d3d3d;
+}
+.books-table tbody tr td:first-child {
+	border-radius: 8px 0 0 8px;
+}
+.books-table tbody tr td:last-child {
+	border-radius: 0 8px 8px 0;
+}
+
+.books-table_img-td {
+	min-height: 150px;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.books-table_img-wrapper {
+	text-align: right;
+	width: 100px;
+}
+
+.books-table_img {
+	width: 100%;
+}
+
+.books-table_actions_wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	column-gap: 20px;
+}
+
+.empty-list {
+	text-align: center;
+}
+
+.link-create {
+	margin-top: 50px;
+	display: flex;
+	width: 100px;
+	height: 50px;
+	background-color: #5c5c5c;
+	justify-content: center;
+	align-items: center;
+	border-radius: 8px;
+
+	transition: background-color 0.2s ease-in-out;
+}
+
+.link-create:hover {
+	background-color: #919191;
+}
+
+.form-title {
+	margin-top: 50px;
+	text-align: center;
+}
+
+.main-form {
+	font-family: "Roboto", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+
+	margin-top: 30px;
+	margin-inline: auto;
+	padding: 30px;
+
+	display: flex;
+	flex-direction: column;
+
+	width: 400px;
+	min-height: 200px;
+
+	border-radius: 10px;
+	background-color: #414141;
+}
+
+.main-form input {
+	font-family: "Roboto", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+
+	outline: none;
+	border: none;
+	outline: 1px solid #1f1f1f7e;
+
+	padding: 5px 10px;
+
+	background-color: #4d4d4d;
+	color: #fff;
+
+	transition: outline 0.2s ease-in;
+}
+
+.main-form input:active,
+.main-form input:focus {
+	outline: 2px solid #1f1f1fc7;
+}
+
+.main-form input.last-child {
+	display: flex;
+	background-color: transparent;
+	outline: none;
+	padding: 0;
+}
+
+.main-form input:not(:first-child) {
+	margin-top: 20px;
+}
+
+.main-form_btn-wrapper {
+	margin-top: 30px;
+	text-align: center;
+}
+
+.main-form_btn-wrapper button {
+	text-transform: uppercase;
+	font-size: 16px;
+
+	background-color: #292929;
+
+	padding: 8px 20px;
+	border-radius: 5px;
+
+	transition: background-color 0.2s ease-in-out;
+}
+
+.main-form_btn-wrapper button:hover {
+	background-color: #2929298c;
+}

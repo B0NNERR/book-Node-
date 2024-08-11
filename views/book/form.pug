@@ -1,0 +1,12 @@
+h2.form-title #{title}
+form.main-form( method="POST", enctype="multipart/form-data") 
+    input(type="text", value = `${book.title}`, name="title", id="title", required=true)
+    input(type="text", value = `${book.description}`, name="description", id="description", required=true)
+    input(type="text", value = `${book.authors}`, name="authors", id="authors", required=true)
+    input(type="text", value = `${book.favorite}`, name="favorite", id="favorite", required=true)
+    input.last-child(type="file", name="fileCover", id="fileCover", required=true)
+    .main-form_btn-wrapper
+        if isCreate
+            button(type="submit") Создать
+        else
+            button(type="submit") Изменить

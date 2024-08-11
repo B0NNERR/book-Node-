@@ -1,0 +1,21 @@
+- var path = path
+
+nav.navbar 
+    a.logo(href="/") Booooks
+    ul.navbar-list 
+        case path 
+            when "/"
+                li.navbar-list_item
+                    a.navbar-list_link.navbar-list_link-active(href="/") Главная
+                li.navbar-list_item
+                    a.navbar-list_link(href="/books") Библиотека
+            when "/books"
+                li.navbar-list_item
+                    a.navbar-list_link(href="/") Главная
+                li.navbar-list_item
+                    a.navbar-list_link.navbar-list_link-active(href="/books") Библиотека
+            default
+                li.navbar-list_item
+                    a.navbar-list_link(href="/") Главная
+                li.navbar-list_item
+                    a.navbar-list_link(href="/books") Библиотека

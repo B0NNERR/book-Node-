@@ -1,0 +1,33 @@
+include ./../layouts/start.pug
+    include ./../layouts/header.pug
+        include ./../layouts/menu.pug
+
+    main 
+        .container 
+            a.link-create(href="/books/create") Создать
+            table.books-table 
+                thead.books-table_thead 
+                    tr 
+                        th
+                        th Название
+                        th Автор
+                        th Избранное
+                        th 
+                tbody 
+                    tr 
+                        td.books-table_img-td 
+                            div.books-table_img-wrapper
+                                img.books-table_img(src=`/imgs/${book.fileCover}`, alt=`${book.title}`)
+                        td #{book.title}
+                        td #{book.authors}
+                        td 
+                            if book.favorite == true 
+                                p Да
+                            else 
+                                p Нет
+                        td 
+                            .books-table_actions_wrapper 
+                                a.books-table_link_on(href=`/books/${book.id}`) Посмотреть
+                                a.books-table_link_on(href=`/books/update/${book.id}`) Изменить
+                                form.books-table_form-delete(action=`/books/delete/${book.id}`, method="post")
+                                    button.books-table_link_on(type="submit") Удалить 
